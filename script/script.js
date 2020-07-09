@@ -14,11 +14,11 @@ const elementsModalSubmit = [...modalSubmit.elements]
 
      
    
-const closeModal = ("keydown",function(event) {
+const closeModal = event => {
     const target = event.target;
 
-    if (target.closest('.modal__close') || target === modalItem || 
-        event.key === 'Escape' || target === modalAdd ) {
+    if (target.closest('.modal__close') || target.classList.contains('modal') 
+        || event.code = 'Escape' ) {
         
         modalSubmit.reset();
         modalItem.classList.add('hide'); 
